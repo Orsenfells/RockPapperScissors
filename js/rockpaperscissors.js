@@ -6,15 +6,17 @@ function computerPlay() {
     let computerMove = computerChoice[Math.floor(Math.random()*computerChoice.length)];
     return computerMove;
 }
+let score;
 function getPlayerMove() {
     let playerMove;
+    
      playerMove = prompt('Rock, Paper, Scissors playa');
-        switch(playerMove) {
-            case 'Rock':
+        switch(playerMove.toLowerCase()) {
+            case 'rock':
                 return playRock();
-            case 'Paper':
+            case 'paper':
                 return playPaper();
-            case 'Scissors':
+            case 'scissors':
                 return playScissors();
             default:
                 getPlayerMove();
@@ -23,49 +25,49 @@ function getPlayerMove() {
 function playRock() {
     let computerMove = computerPlay();
     if(computerMove == 'Rock') {
-        alert("Computer Move: " + computerMove + "\nIt's a Tie");
+        alert("Computer Move: " + computerMove + "\nIt's a Tie\nScore: " + score);
     }
     else if(computerMove == 'Paper') {
-        alert("Computer Move: " + computerMove + "\nYou Lost");
+        alert("Computer Move: " + computerMove + "\nYou Lost\nScore: " + score);
     }
     else if(computerMove == 'Scissors') {
-        alert("Computer Move: " + computerMove + "\nYou Won");
+        score++
+        alert("Computer Move: " + computerMove + "\nYou Won\nScore: " + score);
     }
 }
 function playPaper() {
     let computerMove = computerPlay();
     if(computerMove == 'Paper') {
-        alert("Computer Move: " + computerMove + "\nIt's a Tie");
+        alert("Computer Move: " + computerMove + "\nIt's a Tie\nScore: " + score);
     }
     else if(computerMove == 'Scissors') {
-        alert("Computer Move: " + computerMove + "\nYou Lost");
+        alert("Computer Move: " + computerMove + "\nYou Lost\nScore: " + score);
     }
     else if(computerMove == 'Rock') {
-        alert("Computer Move: " + computerMove + "\nYou Won");
+        score++;
+        alert("Computer Move: " + computerMove + "\nYou Won\nScore: " + score);
     }
 }
 function playScissors() {
     let computerMove = computerPlay();
     if(computerMove == 'Paper') {
-        alert("Computer Move: " + computerMove + "\nYou won");
+        score++
+        alert("Computer Move: " + computerMove + "\nYou Won\nScore: " + score);
     }
     else if(computerMove == 'Scissors') {
-        alert("Computer Move: " + computerMove + "\nIt's a Tie");
+        alert("Computer Move: " + computerMove + "\nIt's a Tie\nScore: " + score);
     }
     else if(computerMove == 'Rock') {
-        alert("Computer Move: " + computerMove + "\nYou Lost");
+        alert("Computer Move: " + computerMove + "\nYou Lost\nScore: " + score);
     }
 }
 function playRound(getPlayerMove, computerPlay) {
-    let playerMove;
-    let computerMove;
     getPlayerMove();
-    computerMove = computerPlay();
-   // if((playerMove == 'Rock' && computerMove == 'Paper') || (playerMove == 'Rock' && computerMove == 'Scissors')) {
-     //   alert("Winner Winner Flippin Dinner");
-    //}
-    
+    computerMove = computerPlay(); 
 }
-            
-          //  para.textContent = computerPlay();
-            //document.getElementById("myDiv").appendChild(para);
+function game() {
+    score = 0;
+    for(i = 0;i < 5; i++) {
+    getPlayerMove();   
+    }
+}
