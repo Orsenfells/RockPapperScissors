@@ -1,4 +1,5 @@
 let para = document.createElement('p');
+let score;
 const playerSelection = 'Rock';
 let computerSelection = computerPlay();
 function computerPlay() {
@@ -6,7 +7,7 @@ function computerPlay() {
     let computerMove = computerChoice[Math.floor(Math.random()*computerChoice.length)];
     return computerMove;
 }
-let score;
+
 function getPlayerMove() {
     let playerMove;
     

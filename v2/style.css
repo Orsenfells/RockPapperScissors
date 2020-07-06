@@ -1,0 +1,37 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(to bottom,rgb(255, 171, 64), tan); 
+
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+header {
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    display: flex;
+    justify-content: center;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+main > button {
+    color: #c40d0d;
+    margin: 5px;
+    background-color: #ebf0ff;
+    font-weight: bold;
+    border: 2px black solid;
+    border-radius: 2em;
+    height:4em;
+    width: 17em;
+}
+.title {
+    font-size: 2.5em;
+}
