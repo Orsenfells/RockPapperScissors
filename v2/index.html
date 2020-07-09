@@ -7,13 +7,23 @@
     </head>
     <body>
         <header>
-            <h1 class="title">ROCK PAPER SCISSORS</h1>
+            <h1 class="title">ROCK PAPER SCISSORS</h1>      
         </header>
+        <div class="score">
+            <div class="wins">Player Wins:</div>
+            <div class="losses">Computer Wins:</div>
+        </div>
+        <div class="moves">
+            <div class="playerMove">PlayerMove</div>
+            <div class="computerMove">Computer Move</div>
+        </div>
         <main>
-            <button>ROCK</button>
-            <button>PAPER</button>
-            <button>SCISSORS</button>
+            
+            <button class="playerChoice" id="rock">ROCK</button>
+            <button class="playerChoice" id="paper">PAPER</button>
+            <button class="playerChoice" id="scissors">SCISSORS</button>
         </main>
+        <div class="ties">Ties: </div>
         <script src="script.js"></script>
     </body>
 </html>
