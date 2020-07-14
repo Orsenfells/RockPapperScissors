@@ -52,4 +52,9 @@ main > button {
     display: flex;
     justify-content: space-between;
     margin: 20px;
+    height: 265px;
+}
+.matchImage {
+    display: flex;
+    align-content: center;
 }

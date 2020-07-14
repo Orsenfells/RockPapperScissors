@@ -6,12 +6,18 @@ let computerMove  = document.querySelector('.computerMove')
 let playerWins    = document.querySelector('.wins');
 let computerWins  = document.querySelector('.losses');
 let totalTies     = document.querySelector('.ties');
-let rockImg     = new Image();
-let paperImg    = new Image();
-let scissorsImg = new Image();
-rockImg.src = 'images/rock.png';
-paperImg.src = 'images/paper.png';
-scissorsImg.src = 'images/scissors.png';
+let computerRockImg     = new Image();
+let computerPaperImg    = new Image();
+let computerScissorsImg = new Image();
+computerRockImg.src = 'images/rock.png';
+computerPaperImg.src = 'images/paper.png';
+computerScissorsImg.src = 'images/scissors.png';
+let playerRockImg     = new Image();
+let playerPaperImg    = new Image();
+let playerScissorsImg = new Image();
+playerRockImg.src = 'images/rock.png';
+playerPaperImg.src = 'images/paper.png';
+playerScissorsImg.src = 'images/scissors.png';
 let wins = 0;
 let losses = 0;
 let ties = 0;
@@ -21,57 +27,64 @@ function computerPlay() {
 function play() {
     let computer = computerPlay();
     let player = this.innerText.toLowerCase();
-    let playerImg;
-    playerMove.innerText = player;
-    computerMove.innerText = computer;
 
     switch(player) {
         case 'rock':
             playRock(computer);
-            appendImage(player, computer);
+            appendComputerImage(computer);
+            appendPlayerImage(player);
             break;
         case 'paper':
             playPaper(computer);
-            appendImage(player, computer);
+            appendComputerImage(computer);
+            appendPlayerImage(player);
             break;
         case 'scissors':
             playScissors(computer);
-            appendImage(player, computer);
+            appendComputerImage(computer);
+            appendPlayerImage(player);
             break;
     }
     score(); 
     return
 }
-function appendImage(player, computer) {
+function appendComputerImage(computer) {
     computerMove.textContent = "";
-    playerMove.textContent = "";
+    
     switch(computer) {
         case 'rock':
-            computerMove.append(rockImg);
+            console.log("computer")
+            computerMove.append(computerRockImg);
             break;
         case 'paper':
-            computerMove.append(paperImg);
-            break
+            computerMove.append(computerPaperImg);
+            break;
         case 'scissors':
-            computerMove.append(scissorsImg);
-            break
+            computerMove.append(computerScissorsImg);
+            break;
     }
+    
+}
+function appendPlayerImage(player) {
+    playerMove.textContent = "";
     switch(player) {
         case 'rock':
-            playerMove.append(rockImg);
+            console.log("thsudj")
+            playerMove.append(playerRockImg);
             break;
         case 'paper':
-            playerMove.append(paperImg);
+            playerMove.append(playerPaperImg);
             break;
         case 'scissors':
-            playerMove.append(scissorsImg);
+            playerMove.append(playerScissorsImg);
             break;
     }
+    return
 }
 function score() {
     playerWins.innerText = `Player Wins: ${wins}`;
     computerWins.innerText = `Computer Wins: ${losses}`;
-    totalTies.innerText = `Ties ${ties}`;
+    totalTies.innerText = `Ties: ${ties}`;
     return
 }
 function playRock(computerPlay) {
